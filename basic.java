@@ -43,10 +43,10 @@ Scanner myObj = new Scanner(System.in);
     }
 
     if(input==5){
-        System.out.println("Please choose a subject by it's corresponding number; \n 1.Algebra 1 \n");
+        System.out.println("Please choose a subject by it's corresponding number; \n 1.Algebra \n");
         int subject = myObj.nextInt();
         if(subject==1){
-            System.out.println("Please choose your Algebra 1 service: \n 1.Find the slope");
+            System.out.println("Please choose your Algebra 1 service: \n 1.Find the slope 2.Factor Quadratic \n 3. Find restricted value");
             int service = myObj.nextInt();
            
                 if(service==1){
@@ -58,9 +58,28 @@ Scanner myObj = new Scanner(System.in);
                 double x2 =  myObj.nextDouble(); 
                 System.out.println("Please type the y value of point 2.");
                 double y2 =  myObj.nextDouble(); 
-                System.out.println("The slope of this line is: "+ slope(x1,y1,x2,y2)); 
+                System.out.println("The slope of this line is: "+ slope(x1,y1,x2,y2));
+                }
+                if(service==2){
+                    System.out.println("Please input your a value: \n");
+                    double a = myObj.nextDouble();
+                    System.out.println("Please input your b value: \n");
+                    double b = myObj.nextDouble();
+                    System.out.println("Please input your c value: \n");
+                    double c = myObj.nextDouble();
+
+                    System.out.println(quadraticfactor(a,b,c));
+
+
 
             }
+
+                if(service==3){
+
+
+                    System.out.println("Please input the terms of the denonimator of your base:");
+                    
+                }
         }
         
     }
@@ -97,5 +116,23 @@ Scanner myObj = new Scanner(System.in);
 
         return rslope; 
     }
+
+    public static String quadraticfactor(double a, double b, double c){
+        String factors = "";
+        double t1 = (Math.pow(b,2)) - 4*a*c;
+        System.out.println(t1);
+        double rp = ((-b)+ Math.sqrt(t1))/(2*a);
+        System.out.println(rp);
+        double rn = (-b- Math.sqrt(t1))/(2*a);
+        System.out.println(rn);
+
+        factors = "(x " + rp +") and (x" + rn + ")";
+        Math.pow(b,2);
+
+
+        return factors ; 
+    }
+
+    
 
 }
